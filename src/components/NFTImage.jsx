@@ -14,7 +14,7 @@ const NFTImage = ({ i }) => {
     }
 
     return (
-        <motion.div initial={{opacity: 0}} whileInView={{opacity: 100, scale: [0.5, 1]}} transition={{delay: 0.3}} className="">
+        <motion.div initial={{opacity: 0, scale: 0.5}} whileInView={{opacity: 100, scale:  1}} transition={{delay: 0.3}} className="">
             <motion.div animate={hover ? { rotate: [0, 5, -5, 5, -5, 0] } : { rotate: 0 }} className="bg-picbg border-2 border-mypink h-auto w-[16rem] p-3 mx-auto rounded-xl z-10 relative" onMouseEnter={enter} onMouseLeave={leave}>
                 <div className="h-[14rem] relative">
                     <img src="/dummy.webp" alt="" className="absolute w-full h-full object-cover rounded-xl" />
