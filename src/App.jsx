@@ -5,6 +5,10 @@ import Launchpad from './views/Launchpad'
 import Rocket from './views/Rocket'
 
 import { Parallax } from 'react-scroll-parallax'
+import NFT from './views/NFT'
+import Partnership from './views/Partnership'
+import Future from './views/Future'
+import Footer from './views/Footer'
 
 
 
@@ -16,7 +20,10 @@ const App = () => {
 
       <Rocket />
       <Launchpad />
-
+      <NFT />
+      <Partnership />
+      <Future />
+      <Footer />
     </>
   )
 }

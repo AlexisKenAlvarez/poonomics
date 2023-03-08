@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .stroke-white {
   -webkit-text-fill-color: transparent;
   /* Will override color (regardless of order) */

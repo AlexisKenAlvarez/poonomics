@@ -24,7 +24,7 @@ const Hero = () => {
 
 
     return (
-        <div className="w-full h-screen relative" ref={ref}>
+        <div className="w-full h-screen relative" ref={ref}  id='home'>
             <div className='w-full h-full fixed top-0 left-0 bg-hero'>
 
                 <section className='w-full h-screen flex items-center text-white font-poppins py-20 relative z-10'>
