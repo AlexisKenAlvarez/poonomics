@@ -7,6 +7,8 @@ import { motion } from 'framer-motion'
 const Partnership = () => {
 
     const [titleRef, titleView] = useInView({ triggerOnce: true, threshold: 0.3 })
+    const [spRef, spView] = useInView({ triggerOnce: true, threshold: 0.3 })
+
 
     return (
         <section className='w-full h-auto py-20 bg-[#050552] relative z-10 font-poppins text-white overflow-hidden' ref={titleRef} id="partners">
@@ -31,7 +33,7 @@ const Partnership = () => {
 
                 </div>
                 <div className="">
-                    <img src="/partner.webp" alt="Partner" className="sm:w-[50vh] md:relative absolute top-0 bottom-0 my-auto opacity-50 z-0 md:opacity-100" />
+                    <motion.img initial={{ opacity: 0 }} animate={spView ? { scale: [1.8, 1], opacity: 100, x: [100, 0] } : {}} transition={{ duration: 0.8 }} src="/partner.webp" alt="Partner" className="sm:w-[50vh] md:relative absolute top-0 bottom-0 my-auto opacity-50 z-0 md:opacity-100" ref={spRef}/>
 
                 </div>
             </div>

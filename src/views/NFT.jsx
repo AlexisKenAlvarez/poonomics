@@ -35,8 +35,8 @@ const NFT = () => {
                     {nftList.map((items, i) => {
                         return (
                             <div className="w-fit h-fit relative" key={i}>
-                                <NFTImage key={i} />
-                                <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0, 100, 0] }} transition={{ duration: 3, delay: i * 0.2, repeat: Infinity, repeatDelay: 3.5, repeatType: "reverse" }} className="w-full h-full shadow-nftglow absolute top-0 left-0 rounded-xl"></motion.div>
+                                <NFTImage key={i} i={i} />
+
                             </div>
                         )
                     })}

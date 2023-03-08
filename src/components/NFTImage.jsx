@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const NFTImage = () => {
+const NFTImage = ({ i }) => {
 
+    const [hover, setHover] = useState(false)
+
+    const enter = () => {
+        setHover(true)
+    }
+
+    const leave = () => {
+        setHover(false)
+    }
 
     return (
-        <motion.div className="bg-picbg border-2 border-mypink h-auto w-[16rem] p-3 mx-auto rounded-xl z-10 relative">
+        <motion.div animate={hover ? { rotate: [0, 5, -5, 5, -5, 0] } : { rotate: 0 }} className="bg-picbg border-2 border-mypink h-auto w-[16rem] p-3 mx-auto rounded-xl z-10 relative" onMouseEnter={enter} onMouseLeave={leave}>
             <div className="h-[14rem] relative">
                 <img src="/dummy.webp" alt="" className="absolute w-full h-full object-cover rounded-xl" />
             </div>
@@ -17,6 +26,8 @@ const NFTImage = () => {
                 </div>
 
             </div>
+
+            <motion.div initial={{ opacity: 0 }} animate={hover ? { opacity: 100 } : {opacity: 0}} className="w-full h-full shadow-nftglow absolute top-0 left-0 rounded-xl"></motion.div>
         </motion.div>
     )
 }
