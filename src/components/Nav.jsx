@@ -51,7 +51,7 @@ const Nav = () => {
                                     <a href={`#${items}`} className="peer">
                                         <li className="uppercase font-medium cursor-pointer peer hover:text-header transition-colors ease-in-out duration-300" onClick={() => { setActive(false) }}>{items}</li>
                                     </a>
-                                    <div className='h-[5px] w-0 bg-gradient-to-b from-myblue to-mypink peer-hover:w-full transition-all ease-in-out duration-300'></div>
+                                    <div className='h-[5px] w-0 bg-mypink peer-hover:w-full transition-all ease-in-out duration-300'></div>
 
                                 </div>
 
