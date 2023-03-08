@@ -22,7 +22,7 @@ const Partnership = () => {
                             As the crypto market continues to evolve and mature, we recognize the importance of collaboration and building strong relationships with key players in the industry.
                         </motion.p>
 
-                        <a href="" target="_blank" rel="noopener noreferrer" className="">
+                        <a href="https://sphynxlabs.co/" target="_blank" rel="noopener noreferrer" className="">
                             <motion.button initial={{ opacity: 0 }} animate={titleView ? { opacity: 100 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center gap-x-2 bg-gradient-to-br px-7 py-3 from-sauce to-mypink rounded-lg transition-all ease-in-out duration-300 hover:shadow-hover hover:translate-y-[-6px] font-header font-bold mt-10">
                                 <p className="text-lg">Visit Sphynx</p>
                             </motion.button>
