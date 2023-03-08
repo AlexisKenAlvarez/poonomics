@@ -35,7 +35,7 @@ const Hero = () => {
                         <img src="/topog.webp" alt="Topog" className="absolute h-full right-0 top-0" />
 
                         <div className="w-2 h-2 absolute bg-[#594798] rounded-full shadow-heroglow1 top-[18rem] left-[15%] z-[1]"></div>
-                        <div className="w-10 h-10 absolute bg-[#6e3465] rounded-full shadow-heroglow2 bottom-[18rem] right-[25%] z-0"></div>
+                        <div className="w-10 h-10 absolute bg-[#6e3465] rounded-full shadow-heroglow2 bottom-[15rem] right-[20%] z-0"></div>
 
                         <div className="w-fit px-8 mx-auto flex items-center gap-x-14 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
                             <div className="w-full md:min-w-[30rem] md:text-left text-center">
