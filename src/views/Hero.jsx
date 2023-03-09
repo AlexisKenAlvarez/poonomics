@@ -86,8 +86,11 @@ const Hero = () => {
 
                                 <a href="" target="_blank" rel="noopener noreferrer" className="">
                                     <button className="flex gap-x-2 items-center text-lg mt-8 mx-auto lg:mx-0">
-                                        <img src="/shib.webp" alt="Shibarium" className="w-5" />
-                                        <p className="text-sm">Shibarium Integration</p>
+                                        <img src="/shib.webp" alt="Shibarium" className="w-7" />
+                                        <p className="">Shibarium Integration</p>
+                                        <div className="relative w-3 h-3 rounded-full bg-[#06b153] ml-2">
+                                            <motion.div animate={{ opacity: [0, 100, 100, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="w-full h-full absolute left-0 top-0 bg-[#06b153] shadow-greenGlow rounded-full"></motion.div>
+                                        </div>
                                     </button>
                                 </a>
                             </div>
