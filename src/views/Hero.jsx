@@ -1,11 +1,14 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaTelegramPlane, FaLongArrowAltRight } from 'react-icons/fa'
 import { motion, useScroll, useTransform, useSpring, useAnimation } from 'framer-motion'
-
+import NET from 'vanta/dist/vanta.net.min'
+import * as THREE from 'three'
 
 const Hero = () => {
 
     const ref = useRef(null)
+    const [vantaEffect, setVantaEffect] = useState(null)
+    const myRef = useRef(null)
 
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -19,12 +22,35 @@ const Hero = () => {
     });
 
     const opacity1 = useTransform(opacitySpring, [0.1, 0.5], [1, 0])
-
     const opacity2 = useTransform(opacitySpring, [0.1, 0.7], [0, 1])
+
+    useEffect(() => {
+        if (!vantaEffect) {
+            setVantaEffect(NET({
+                el: myRef.current,
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xffffff,
+                backgroundColor: 0x1D1862,
+                points: 17.00,
+                maxDistance: 0.00,
+                spacing: 17.00
+
+            }))
+        }
+        return () => {
+            if (vantaEffect) vantaEffect.destroy()
+        }
+    }, [vantaEffect])
 
 
     return (
-        <div className="w-full h-screen relative" ref={ref}  id='home'>
+        <div className="w-full h-screen relative" ref={ref} id='home'>
             <div className='w-full h-full fixed top-0 left-0 bg-hero'>
 
                 <section className='w-full h-screen flex items-center text-white font-poppins py-20 relative z-10'>
@@ -63,7 +89,7 @@ const Hero = () => {
 
                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, type: 'spring', stiffness: 50 }} className="w-full items-center justify-center h-full lg:flex hidden z-10 relative" style={{ transformOrigin: "right center" }}>
 
-                                <img src="/hero.webp" alt="Hero" className="w-[48vh] relative z-10 block mb-6" />
+                                <motion.img animate={{ rotateX: [0, -30, 30, 0] }} transition={{ type: "spring", stiffness: 300, delay: 2, repeat: Infinity, repeatDelay: 3 }} src="/hero.webp" alt="Hero" className="w-[48vh] relative z-10 block mb-6" />
                                 <div className="w-[85%] h-[90%] bg-picbg absolute bottom-0 border-2 border-mypink z-[2]"></div>
                                 <div className="w-[85%] h-[70%] bg-picbg absolute bottom-16 border-2 border-mypink right-0 z-[1]"></div>
                                 <div className="w-[85%] h-[60%] bg-picbg absolute bottom-24 border-2 border-mypink -right-9"></div>
@@ -74,7 +100,11 @@ const Hero = () => {
                     </motion.div>
 
 
-                    <motion.img src="/stars.webp" alt="Stars" className="w-full h-full sm:object-fit mt-[10%] object-cover z-0 absolute" style={{ opacity: opacity2 }} />
+                    <motion.div style={{ opacity: opacity2 }} className="w-full h-full z-0 absolute ">
+                        <div className="w-full h-full absolute left-0 top-0 z-[2]" ref={myRef}></div>
+                        <img src="/stars.webp" alt="Stars" className="w-full h-full sm:object-fit mt-[10%] object-cover z-[3] absolute" />
+                    </motion.div>
+
 
                 </section>
 
