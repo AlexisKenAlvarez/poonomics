@@ -85,13 +85,13 @@ const Hero = () => {
                                 </motion.div>
 
                                 <a href="" target="_blank" rel="noopener noreferrer" className="">
-                                    <button className="flex gap-x-2 items-center text-lg mt-8 mx-auto lg:mx-0">
+                                    <motion.button initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.25 }} className="flex gap-x-2 items-center text-lg mt-8 mx-auto lg:mx-0">
                                         <img src="/shib.webp" alt="Shibarium" className="w-7" />
                                         <p className="">Shibarium Integration</p>
                                         <div className="relative w-3 h-3 rounded-full bg-[#06b153] ml-2">
                                             <motion.div animate={{ opacity: [0, 100, 100, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="w-full h-full absolute left-0 top-0 bg-[#06b153] shadow-greenGlow rounded-full"></motion.div>
                                         </div>
-                                    </button>
+                                    </motion.button>
                                 </a>
                             </div>
 

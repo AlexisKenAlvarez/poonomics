@@ -22,7 +22,7 @@ const NFTImage = ({ i }) => {
                 <div className="w-full h-auto">
                     <div className=" flex items-center justify-between mt-2">
                         <h1 className='font-header text-2xl font-bold ml-2'>PooNomic</h1>
-                        <p className='text-md mr-2'>0 ETH</p>
+                        <p className='text-md mr-2'>0 POOP</p>
 
                     </div>
 
