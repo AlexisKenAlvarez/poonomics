@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring, useAnimation } from 'framer
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
 
+
 const Hero = () => {
 
     const ref = useRef(null)
@@ -54,10 +55,7 @@ const Hero = () => {
             <div className='w-full h-full fixed top-0 left-0 bg-hero'>
 
                 <section className='w-full h-screen flex items-center text-white font-poppins py-20 relative z-10'>
-
-
                     <motion.div className="mx-auto" style={{ opacity: opacity1 }}>
-
                         <img src="/topog.webp" alt="Topog" className="absolute h-full right-0 top-0" />
 
                         <div className="w-2 h-2 absolute bg-[#594798] rounded-full shadow-heroglow1 top-[18rem] left-[15%] z-[1]"></div>
@@ -85,6 +83,13 @@ const Hero = () => {
                                     </a>
 
                                 </motion.div>
+
+                                <a href="" target="_blank" rel="noopener noreferrer" className="">
+                                    <button className="flex gap-x-2 items-center text-lg mt-8 mx-auto lg:mx-0">
+                                        <img src="/shib.webp" alt="Shibarium" className="w-5" />
+                                        <p className="text-sm">Shibarium Integration</p>
+                                    </button>
+                                </a>
                             </div>
 
                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, type: 'spring', stiffness: 50 }} className="w-full items-center justify-center h-full lg:flex hidden z-10 relative" style={{ transformOrigin: "right center" }}>

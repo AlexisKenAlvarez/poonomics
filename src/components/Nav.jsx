@@ -35,9 +35,9 @@ const Nav = () => {
     return (
         <>
             <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.7 }} className={` w-full h-auto lg:h-auto sm:px-10 px-3 sm:py-5 text-white z-[30] top-0 left-0 fixed ${scrolled ? "backdrop-blur-sm py-3 border-b-[1px] border-b-mypink/[.20] " : ""}`}>
-                <div className="absolute w-full h-[120%] top-0 left-0 z-0 shadow-nav opacity-70 transition-all ease-in-out duration-300 " style={scrolled ? {} : { opacity: "0%" }}></div>
+                <div className="absolute w-full h-[120%] top-0 left-0 z-0 shadow-nav opacity-70 transition-opacity ease-in-out duration-300 " style={scrolled ? {} : { opacity: "0%" }}></div>
                 <div className="max-w-[1500px] w-full h-auto flex items-center justify-between mx-auto z-10 relative">
-                    <motion.a animate={{scale: [1, 1.5, 1], rotate: [0, 30, -45, 45, -40, 30, 0]}} transition={{duration: 0.5, repeat: Infinity, repeatDelay: 2}} href="#home" className='flex items-center gap-x-3 m-4 transition-all ease-in-out duration-300' style={scrolled ? { margin: "0" } : {}}>
+                    <motion.a animate={{ scale: [1, 1.5, 1], rotate: [0, 30, -45, 45, -40, 30, 0] }} transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }} href="#home" className='flex items-center gap-x-3 m-4 transition-all ease-in-out duration-300' style={scrolled ? { margin: "0" } : {}}>
                         <img src="/logo.webp" alt="Logo" className="w-14 cursor-pointer" />
                         <h1 className='font-saira font-bold text-2xl'>PooNomics</h1>
                     </motion.a>
@@ -52,14 +52,9 @@ const Nav = () => {
                                         <li className="uppercase font-medium cursor-pointer peer hover:text-header transition-colors ease-in-out duration-300" onClick={() => { setActive(false) }}>{items}</li>
                                     </a>
                                     <div className='h-[5px] w-0 bg-mypink peer-hover:w-full transition-all ease-in-out duration-300'></div>
-
                                 </div>
-
-
                             )
                         })}
-
-
                     </ul>
 
                     <HiMenuAlt3 className='text-4xl block lg:hidden' onClick={setToggle} />
