@@ -27,7 +27,7 @@ const NFT = () => {
                     <div className="h-fit w-fit relative mt-2" ref={titleRef}>
                         <h1 className='font-header text-7xl font-bold mt-2 z-0 stroke-white opacity-30'>NFTs</h1>
 
-                        <motion.h1 animate={titleView ? { y: 25 } : {}} transition={{ duration: 0.7, delay: 0.3, ease: [0.33, 1, 0.68, 1] }} className='absolute font-header text-7xl font-bold mt-2 z-10 bottom-0 left-0'>NFTs</motion.h1>
+                        <motion.h1 whileInView={{ y: 25 }} transition={{ duration: 0.7, delay: 0.3, ease: [0.33, 1, 0.68, 1] }} className='absolute font-header text-7xl font-bold mt-2 z-10 bottom-0 left-0'>NFTs</motion.h1>
                     </div>
                 </div>
 
