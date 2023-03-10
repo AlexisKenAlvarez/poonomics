@@ -120,7 +120,7 @@ const Hero = () => {
                                                 transition={{ duration: 1, ease: [.16, .95, .8, .97] }} src={`mockup/${items}.webp`}
                                                 alt={items}
                                                 style={{ zIndex: i }}
-                                                className="absolute left-0 top-0 w-[100vh] border-[0.5rem] border-[#64369B] rounded-2xl shadow-2xl"
+                                                className="absolute left-0 top-0 w-[100vh] border-[0.5rem] border-[#64369B] rounded-2xl shadow-mockup"
                                                 key={i} /> : null
                                         )
                                     })}

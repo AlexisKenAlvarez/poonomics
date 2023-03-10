@@ -23,7 +23,8 @@ module.exports = {
         heroglow1: '0px 0px 500px 100px rgba(205,161,255,1)',
         heroglow2: '0px 0px 600px 100px rgba(231,95,105,1)',
         nftglow: '0px 0px 40px -2px rgba(252,91,255,0.75)',
-        greenGlow: '0px 0px 70px 20px rgba(6,177,83,0.75)'
+        greenGlow: '0px 0px 70px 20px rgba(6,177,83,0.75)',
+        mockup: '10px 10px 26px 0px rgba(0,0,0,0.56)'
       },
 
       dropShadow: {
