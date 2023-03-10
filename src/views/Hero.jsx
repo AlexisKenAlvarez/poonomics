@@ -129,7 +129,7 @@ const Hero = () => {
                                                         src={`mockup/${items}.webp`}
                                                         alt={items}
                                                         style={{ zIndex: i }}
-                                                        className="  rounded-2xl  h-full object-cover w-full"
+                                                        className="  rounded-2xl  h-full object-cover w-full absolute top-0 left-0"
                                                     />
                                                 </motion.div>
 
