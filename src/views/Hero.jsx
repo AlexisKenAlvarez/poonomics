@@ -77,7 +77,7 @@ const Hero = () => {
                         <div className="w-2 h-2 absolute bg-[#594798] rounded-full shadow-heroglow1 top-[18rem] left-[15%] z-[1]"></div>
                         <div className="w-10 h-10 absolute bg-[#6e3465] rounded-full shadow-heroglow2 bottom-[15rem] right-[20%] z-0"></div>
 
-                        <div className="w-fit px-8 mx-auto flex items-center gap-x-0 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
+                        <div className="w-fit px-8 2xl:px-0 mx-auto flex items-center gap-x-0 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
                             <div className="w-full md:min-w-[30rem] md:text-left text-center">
                                 <motion.h2 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }} className='text-mypink md:mx-0 mx-auto font-medium '>Be a poonomics</motion.h2>
                                 <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }} className='font-header md:text-5xl 2xl:text-7xl 2xl:max-w-[70rem] font-bold max-w-[33rem] mt-2 md:leading-[3.4rem] md:mx-0 mx-auto text-4xl'>Discover Our Rewards dApp And <span className="w-fit h-fit text-transparent bg-gradient-to-br from-sauce to-mypink bg-clip-text">NFT Collections</span></motion.h1>
@@ -123,13 +123,13 @@ const Hero = () => {
                                                     transition={{ duration: 1, ease: [.16, .95, .8, .97] }}
                                                     exit={{ y: 200, rotateX: -50, opacity: 0 }}
                                                     key={i}
-                                                    className="w-full 2xl:h-[24.5rem] h-[16.3rem] absolute left-0 top-0 bg-[#120621] rounded-2xl"
+                                                    className="w-full 2xl:h-[26rem] h-[16.3rem] absolute left-0 top-0 bg-[#120621] rounded-2xl border-[0.5rem] border-[#64369B] shadow-mockup "
                                                 >
                                                     <img
                                                         src={`mockup/${items}.webp`}
                                                         alt={items}
                                                         style={{ zIndex: i }}
-                                                        className=" border-[0.5rem] border-[#64369B] rounded-2xl shadow-mockup"
+                                                        className="  rounded-2xl  h-full object-cover w-full"
                                                     />
                                                 </motion.div>
 
