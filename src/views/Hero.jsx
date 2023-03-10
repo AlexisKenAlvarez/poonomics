@@ -80,7 +80,7 @@ const Hero = () => {
                         <div className="w-fit px-8 mx-auto flex items-center gap-x-0 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
                             <div className="w-full md:min-w-[30rem] md:text-left text-center">
                                 <motion.h2 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }} className='text-mypink md:mx-0 mx-auto font-medium '>Be a poonomics</motion.h2>
-                                <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }} className='font-header md:text-5xl 2xl:text-7xl 2xl:max-w-[50rem] font-bold max-w-[33rem] mt-2 md:leading-[3.4rem] md:mx-0 mx-auto text-4xl'>Discover Our Rewards dApp And <span className="w-fit h-fit text-transparent bg-gradient-to-br from-sauce to-mypink bg-clip-text">NFT Collections</span></motion.h1>
+                                <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }} className='font-header md:text-5xl 2xl:text-7xl 2xl:max-w-[70rem] font-bold max-w-[33rem] mt-2 md:leading-[3.4rem] md:mx-0 mx-auto text-4xl'>Discover Our Rewards dApp And <span className="w-fit h-fit text-transparent bg-gradient-to-br from-sauce to-mypink bg-clip-text">NFT Collections</span></motion.h1>
                                 <motion.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.15 }} className='text-mygrey max-w-[33rem] mt-3 md:mx-0 mx-auto'>PooNomics is the Launchpad for PooChain and the first solution that aims to offer a complete set of cryptocurrencies tools that run on PooChain.</motion.p>
 
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.2 }} className="mt-10 flex gap-x-8 items-center md:mx-0 mx-auto w-fit md:flex-row flex-col gap-y-7">
@@ -116,12 +116,24 @@ const Hero = () => {
                                 <AnimatePresence>
                                     {imageList.map((items, i) => {
                                         return (
-                                            slide === items ? <motion.img initial={{ rotateX: 80, opacity: 0 }} animate={{ rotateX: 0, y: [-300, 0], opacity: 100 }} exit={{ y: 200, rotateX: -80, opacity: 0 }}
-                                                transition={{ duration: 1, ease: [.16, .95, .8, .97] }} src={`mockup/${items}.webp`}
-                                                alt={items}
-                                                style={{ zIndex: i }}
-                                                className="absolute left-0 top-0 w-[100vh] border-[0.5rem] border-[#64369B] rounded-2xl shadow-mockup"
-                                                key={i} /> : null
+                                            slide === items ?
+                                                <motion.div
+                                                    initial={{ rotateX: 80, opacity: 0 }}
+                                                    animate={{ rotateX: 0, y: [-300, 0], opacity: 100 }}
+                                                    transition={{ duration: 1, ease: [.16, .95, .8, .97] }}
+                                                    exit={{ y: 200, rotateX: -50, opacity: 0 }}
+                                                    key={i}
+                                                    className="w-full 2xl:h-[24.5rem] h-[16.3rem] absolute left-0 top-0 bg-[#120621] rounded-2xl"
+                                                >
+                                                    <img
+                                                        src={`mockup/${items}.webp`}
+                                                        alt={items}
+                                                        style={{ zIndex: i }}
+                                                        className=" border-[0.5rem] border-[#64369B] rounded-2xl shadow-mockup"
+                                                    />
+                                                </motion.div>
+
+                                                : null
                                         )
                                     })}
 
