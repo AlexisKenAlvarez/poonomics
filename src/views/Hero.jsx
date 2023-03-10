@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaTelegramPlane, FaLongArrowAltRight } from 'react-icons/fa'
-import { motion, useScroll, useTransform, useSpring, useAnimation } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
 
@@ -49,22 +49,38 @@ const Hero = () => {
         }
     }, [vantaEffect])
 
+    const [slide, setSlide] = useState(1)
+
+    const imageList = [1, 2, 3, 4, 5, 6]
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (slide >= 6) {
+                setSlide(1)
+            } else {
+                setSlide(curr => curr + 1)
+            }
+            console.log(slide)
+        }, 4000);
+    }, [slide])
+
+
 
     return (
         <div className="w-full h-screen relative" ref={ref} id='home'>
             <div className='w-full h-full fixed top-0 left-0 bg-hero'>
 
                 <section className='w-full h-screen flex items-center text-white font-poppins py-20 relative z-10'>
-                    <motion.div className="mx-auto" style={{ opacity: opacity1 }}>
+                    <motion.div className="mx-auto w-full" style={{ opacity: opacity1 }}>
                         <img src="/topog.webp" alt="Topog" className="absolute h-full right-0 top-0" />
 
                         <div className="w-2 h-2 absolute bg-[#594798] rounded-full shadow-heroglow1 top-[18rem] left-[15%] z-[1]"></div>
                         <div className="w-10 h-10 absolute bg-[#6e3465] rounded-full shadow-heroglow2 bottom-[15rem] right-[20%] z-0"></div>
 
-                        <div className="w-fit px-8 mx-auto flex items-center gap-x-14 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
+                        <div className="w-fit px-8 mx-auto flex items-center gap-x-0 relative z-10 2xl:gap-x-[8rem] 2xl:max-w-[1500px]">
                             <div className="w-full md:min-w-[30rem] md:text-left text-center">
                                 <motion.h2 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }} className='text-mypink md:mx-0 mx-auto font-medium '>Be a poonomics</motion.h2>
-                                <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }} className='font-header md:text-5xl 2xl:text-7xl 2xl:max-w-[67rem] font-bold max-w-[40rem] mt-2 md:leading-[3.4rem] md:mx-0 mx-auto text-4xl'>Discover Our Rewards dApp And <span className="w-fit h-fit text-transparent bg-gradient-to-br from-sauce to-mypink bg-clip-text">NFT Collections</span></motion.h1>
+                                <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.1 }} className='font-header md:text-5xl 2xl:text-7xl 2xl:max-w-[50rem] font-bold max-w-[33rem] mt-2 md:leading-[3.4rem] md:mx-0 mx-auto text-4xl'>Discover Our Rewards dApp And <span className="w-fit h-fit text-transparent bg-gradient-to-br from-sauce to-mypink bg-clip-text">NFT Collections</span></motion.h1>
                                 <motion.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.15 }} className='text-mygrey max-w-[33rem] mt-3 md:mx-0 mx-auto'>PooNomics is the Launchpad for PooChain and the first solution that aims to offer a complete set of cryptocurrencies tools that run on PooChain.</motion.p>
 
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1], delay: 0.2 }} className="mt-10 flex gap-x-8 items-center md:mx-0 mx-auto w-fit md:flex-row flex-col gap-y-7">
@@ -95,14 +111,24 @@ const Hero = () => {
                                 </a>
                             </div>
 
-                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, type: 'spring', stiffness: 50 }} className="w-full items-center justify-center h-full lg:flex hidden z-10 relative" style={{ transformOrigin: "right center" }}>
+                            <div className="w-[100vh] 2xl:w-[130vh] items-center justify-center lg:flex hidden z-10 relative h-[26rem]">
 
-                                <motion.img animate={{ rotateX: [0, -30, 30, 0] }} transition={{ type: "spring", stiffness: 300, delay: 2, repeat: Infinity, repeatDelay: 3 }} src="/hero.webp" alt="Hero" className="w-[48vh] relative z-10 block mb-6" />
-                                <div className="w-[85%] h-[90%] bg-picbg absolute bottom-0 border-2 border-mypink z-[2]"></div>
-                                <div className="w-[85%] h-[70%] bg-picbg absolute bottom-16 border-2 border-mypink right-0 z-[1]"></div>
-                                <div className="w-[85%] h-[60%] bg-picbg absolute bottom-24 border-2 border-mypink -right-9"></div>
+                                <AnimatePresence>
+                                    {imageList.map((items, i) => {
+                                        return (
+                                            slide === items ? <motion.img initial={{ rotateX: 80, opacity: 0 }} animate={{ rotateX: 0, y: [-300, 0], opacity: 100 }} exit={{ y: 200, rotateX: -80, opacity: 0 }}
+                                                transition={{ duration: 1, ease: [.16, .95, .8, .97] }} src={`mockup/${items}.webp`}
+                                                alt={items}
+                                                style={{ zIndex: i }}
+                                                className="absolute left-0 top-0 w-[100vh] border-[0.5rem] border-[#64369B] rounded-2xl shadow-2xl"
+                                                key={i} /> : null
+                                        )
+                                    })}
 
-                            </motion.div>
+                                </AnimatePresence>
+
+
+                            </div>
 
                         </div>
                     </motion.div>
