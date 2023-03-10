@@ -31,6 +31,18 @@ const Partnership = () => {
                                 </motion.button>
                             </a>
 
+                            <a href="https://thesphynx.co/swap/20202021" target="_blank" rel="noopener noreferrer" className="">
+                                <motion.button initial={{ opacity: 0 }} animate={titleView ? { opacity: 100 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center gap-x-2 bg-gradient-to-br px-7 py-3 from-sauce to-mypink rounded-lg transition-all ease-in-out duration-300 hover:shadow-hover hover:translate-y-[-6px] font-header font-bold">
+                                    <p className="text-lg">Sphynx swap</p>
+                                </motion.button>
+                            </a>
+
+                            <a href="https://thesphynx.co/bridge/20202021" target="_blank" rel="noopener noreferrer" className="">
+                                <motion.button initial={{ opacity: 0 }} animate={titleView ? { opacity: 100 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center gap-x-2 bg-gradient-to-br px-7 py-3 from-sauce to-mypink rounded-lg transition-all ease-in-out duration-300 hover:shadow-hover hover:translate-y-[-6px] font-header font-bold">
+                                    <p className="text-lg">Sphynx Bridge</p>
+                                </motion.button>
+                            </a>
+
                             <a href="https://darksea.app/#/home" target="_blank" rel="noopener noreferrer" className="">
                                 <motion.button initial={{ opacity: 0 }} animate={titleView ? { opacity: 100 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center gap-x-2 bg-gradient-to-br px-7 py-3 from-sauce to-mypink rounded-lg transition-all ease-in-out duration-300 hover:shadow-hover hover:translate-y-[-6px] font-header font-bold">
                                     <p className="text-lg">Visit Darksea</p>

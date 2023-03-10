@@ -93,7 +93,7 @@ const Hero = () => {
                                         </button>
                                     </a>
 
-                                    <a href="" target="_blank" rel="noopener noreferrer" className="">
+                                    <a href="https://t.me/PooChainBlockchain" target="_blank" rel="noopener noreferrer" className="">
                                         <button className="flex gap-x-2 items-center text-lg">
                                             <p className="">Community</p>
                                             <FaTelegramPlane className='text-xl' />
