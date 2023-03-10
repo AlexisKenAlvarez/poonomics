@@ -44,7 +44,7 @@ const Partnership = () => {
                 <div className="">
                     <motion.img initial={{ opacity: 0 }} animate={spView ? { scale: [1.8, 1], opacity: 100, x: [100, 0] } : {}} transition={{ duration: 0.8 }} src="/partner.webp" alt="Partner" className="sm:w-[50vh] md:relative absolute top-0 bottom-0 my-auto opacity-50 z-[1] md:opacity-100 drop-shadow-partner" ref={spRef} />
 
-                    <motion.img initial={{ opacity: 0 }} animate={spView ? { scale: [1.8, 1], opacity: 100, x: [150, 0] } : {}} transition={{ duration: 0.8 }} src="/darksea.webp" alt="Partner" className="sm:w-[45vh] absolute top-[8rem] sm:right-[9rem] left-0 sm:left-auto my-auto opacity-50 z-0 md:opacity-100 drop-shadow-partner" />
+                    <motion.img initial={{ opacity: 0 }} animate={spView ? { scale: [1.8, 1], opacity: 100, x: [150, 0] } : {}} transition={{ duration: 0.8 }} src="/darksea.webp" alt="Partner" className="sm:w-[45vh] absolute top-[8rem] 2xl:right-[23rem] sm:right-[9rem] left-0 sm:left-auto my-auto opacity-50 z-0 md:opacity-100 drop-shadow-partner" />
 
                 </div>
             </div>
