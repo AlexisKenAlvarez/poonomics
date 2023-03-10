@@ -28,7 +28,9 @@ module.exports = {
       },
 
       dropShadow: {
-        partner: '0px 0px 0px #FC5BFF'
+        partner: '4px 4px 5px #111111'
+
+
       }
 
     },

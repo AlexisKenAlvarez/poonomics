@@ -111,7 +111,7 @@ const Hero = () => {
                                 </a>
                             </div>
 
-                            <div className="w-[100vh] 2xl:w-[130vh] items-center justify-center lg:flex hidden z-10 relative h-[26rem]">
+                            <div className="w-[45rem] 2xl:w-[130vh] items-center justify-center lg:flex hidden z-10 relative h-[25rem]">
 
                                 <AnimatePresence>
                                     {imageList.map((items, i) => {
@@ -123,7 +123,7 @@ const Hero = () => {
                                                     transition={{ duration: 1, ease: [.16, .95, .8, .97] }}
                                                     exit={{ y: 200, rotateX: -50, opacity: 0 }}
                                                     key={i}
-                                                    className="w-full 2xl:h-[26rem] h-[16.3rem] absolute left-0 top-0 bg-[#120621] rounded-2xl border-[0.5rem] border-[#64369B] shadow-mockup "
+                                                    className="w-full 2xl:h-[26rem] h-[20.3rem] absolute left-0 top-0 bg-[#120621] rounded-2xl border-[0.5rem] border-[#64369B] shadow-mockup "
                                                 >
                                                     <img
                                                         src={`mockup/${items}.webp`}
